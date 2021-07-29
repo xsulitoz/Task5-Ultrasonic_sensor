@@ -14,5 +14,5 @@ Link of the task on Tincercad: https://www.tinkercad.com/things/caK4Xhy7x5K-task
 
 NOTE: since there is no bluetooth segment on Tinkercad, I did replace it by two leds representing the robot eyes
 
-Hoping you find it OK..
+I hope you find it OK..
 
