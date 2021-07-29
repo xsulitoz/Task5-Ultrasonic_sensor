@@ -1,0 +1,66 @@
+#include <Servo.h>
+
+int trig=1, echo=2, x=0;
+
+Servo Shoulder;
+Servo Elbow;
+Servo Hand;
+
+void setup()
+{
+  pinMode(trig, OUTPUT);
+  pinMode(echo, INPUT);
+  pinMode(trig, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(13, OUTPUT);
+  
+}
+
+void loop()
+{
+ 
+  digitalWrite(trig,LOW);
+  delay(500);
+  
+  digitalWrite(trig,HIGH);
+  delayMicroseconds(2);
+  digitalWrite(trig,LOW);
+  
+  x=pulseIn(echo,HIGH);
+    
+    if (x<1780){ delay(3000); }
+    if (x<1780) {
+  
+    
+  digitalWrite(12,HIGH);
+  digitalWrite(13,HIGH);
+    
+  Shoulder.attach(8);
+  Shoulder.write(70);
+  
+  Elbow.attach(7); 
+  Elbow.write(50);
+  
+  Hand.attach(6);
+  Hand.write(20);
+  
+  delay(2000);
+  Shoulder.write(50);
+  Elbow.write(30);
+  Hand.write(10);
+    
+  delay(2000);
+  Shoulder.write(0);
+  Elbow.write(0);
+  Hand.write(0);
+    
+  
+ }
+ 
+    else { 
+  digitalWrite(12,LOW);
+  digitalWrite(13,LOW);}     
+    
+}
+  
+  
